@@ -18,7 +18,8 @@ class SplitDateTimeWidget(MultiWidget):
         return [None, None]
 
 class CreateAppointmentForm(ModelForm):
-    time = SplitDateTimeField(widget = SplitDateTimeWidget(attrs={'class': 'input-group time'}))
+    time = SplitDateTimeField(widget = SplitDateTimeWidget(attrs={'class': 'form-control'}))
+    description = forms.CharField(widget = forms.Textarea(attrs={'class': 'form-control'}))
     class Meta:
         model = Appointment
         fields = ['time', 'description']

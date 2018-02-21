@@ -14,14 +14,18 @@
         {% endif %}
     </div>
     <div class="row">
+        <h3>Create a new Appointment</h3>
         <button type="button" class="btn btn-default" id="new-btn">New</button>
         <div id="create-form">
         </div>
     </div>
 
     <div class="row">
-        <input type="text" id="search" name="search" />
-        <button type="button" class="btn btn-primary" id="search-btn">Search</button>
+        <h3>Search for booked appointments</h3>
+        <div class="col-md-3">
+            <input type="text" id="search" name="search" class="form-control" />
+            <button type="button" class="btn btn-primary" id="search-btn">Search</button>
+        </div>
     </div>
 
     <div id="search-results">

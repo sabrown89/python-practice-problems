@@ -1,13 +1,19 @@
 <form action="/create/" method="post">
     {% csrf_token %}
-    <button type="submit" class="btn btn-default" id="submit-btn">Add</button>
-    <a href="/appointment/"><button type="button" class="btn btn-danger" id="cancel-btn">Cancel</button></a>
-    <div class="form-group">
-        <label class="col-form-label">Day / Time</label>
-        {{ form.time }}
+    <div class="form-buttons">
+        <button type="submit" class="btn btn-default" id="submit-btn">Add</button>
+        <a href="/"><button type="button" class="btn btn-danger" id="cancel-btn">Cancel</button></a>
     </div>
-    <div class="form-group">
-        <label class="col-form-label">Description</label>
-        {{ form.description }}
+    <div class="row">
+        <div class="form-group col-md-3">
+            <label class="col-form-label">Day / Time</label>
+            {{ form.time }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-5">
+            <label class="col-form-label">Description</label>
+            {{ form.description }}
+        </div>
     </div>
 </form>
