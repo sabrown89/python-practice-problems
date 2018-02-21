@@ -1,0 +1,27 @@
+div.container-fluid {
+    margin-left: 25%;
+}
+
+button#new-btn.btn.btn-default {
+    margin-bottom: 1%;
+}
+
+div#create-form {
+   margin: 1%;
+}
+
+div.form-buttons {
+    margin-bottom: 1%;
+}
+
+button#submit-btn.btn.btn-default {
+    margin-right: 3%;
+}
+
+input#search.form-control {
+    margin-bottom: 5%;
+}
+
+div.col-md-3 {
+    padding-left: 0;
+}
