@@ -1,0 +1,7 @@
+{% if appointments.search %}
+    <p><strong>Found {{ appointments|length }} appointment{{ appointments|pluralize }}</strong></p>
+    {% include "appointment/results_table.html" %}
+{% else %}
+    <p><strong>Your search did not result in a match. See below for all available appointments</strong></p>
+    {% include "appointment/results_table.html" %}
+{% endif %}
