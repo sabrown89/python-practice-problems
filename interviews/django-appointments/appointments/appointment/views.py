@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Appointment
+from .forms import CreateAppointmentForm
 
 def index(request):
     return render(request, 'appointment/index.html')
@@ -18,3 +19,8 @@ def search_appointments(request):
 
     return render(request, 'appointment/ajax_search.html', {'appointments': appointments})
 #    return render(request, 'appointment/json_table.html', {'appointments': appointments})
+
+def create_form(request):
+    form_class = CreateAppointmentForm
+    return render(request, 'appointment/ajax_create_form.html', {'form': form_class})
+
