@@ -1,0 +1,14 @@
+<table class="table table-striped">
+<tr>
+    <td><strong>Day</strong></td>
+    <td><strong>Time</strong></td>
+    <td><strong>Description</strong></td>
+</tr>
+{% for a in appointments %}
+<tr>
+    <td>{{ a.time|date:"Y-m-d" }}</td>
+    <td>{{ a.time|date:"g:i A" }}</td>
+    <td>{{ a.description }}</td>
+</tr>
+{% endfor %}
+</table>

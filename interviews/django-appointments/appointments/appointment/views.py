@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from .models import Appointment
 from .forms import CreateAppointmentForm
+from django.core import serializers
 
 def index(request):
     return render(request, 'appointment/index.html')
@@ -24,3 +26,11 @@ def create_form(request):
     form_class = CreateAppointmentForm
     return render(request, 'appointment/ajax_create_form.html', {'form': form_class})
 
+def create(request):
+    if request.method == "POST":
+        form = CreateAppointmentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your appointment was successfully added')
+            return redirect('/')
+        return render(request, 'appointment/ajax_create_form.html', {'form': form})

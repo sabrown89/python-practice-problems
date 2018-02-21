@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block js %}
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="messages">
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+    <div class="row">
+        <button type="button" class="btn btn-default" id="new-btn">New</button>
+        <div id="create-form">
+        </div>
+    </div>
+
+    <div class="row">
+        <input type="text" id="search" name="search" />
+        <button type="button" class="btn btn-primary" id="search-btn">Search</button>
+    </div>
+
+    <div id="search-results">
+    </div>
+</div>
+{% endblock %}
