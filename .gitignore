@@ -1,3 +1,9 @@
 pyenv
 __pycache__
 .cache
+appenv
+*.pyc
+*.pyo
+*.swp
+.env
+
