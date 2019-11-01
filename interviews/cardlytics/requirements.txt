@@ -62,7 +62,7 @@ scipy==0.13.0b1
 simplegeneric==0.8.1
 six==1.10.0
 traitlets==4.3.2
-Twisted==13.2.0
+Twisted==19.7.0
 virtualenv==15.1.0
 wcwidth==0.1.7
 xattr==0.6.4
