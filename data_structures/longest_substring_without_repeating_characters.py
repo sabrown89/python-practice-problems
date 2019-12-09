@@ -1,16 +1,23 @@
 def longest_substring(string):
-    substrings = []
-    letter_index = {}
-    max_index_of_string = len(string) - 1
-    for index, letter in enumerate(string):
-        if letter_index.get(letter) is not None:
-            previous_index = letter_index[letter]
-            substrings.append(string[previous_index:index])
-            letter_index[letter] = index
+    substrings = ''
+    longest_substring = ''
+    if not string:
+        return 0
+    for letter in string:
+        if letter in substrings:
+            letter_location = substrings.index(letter)
+            if letter_location == 0:
+                substrings = substrings[1:]
+                substrings = substrings + letter
+            else:
+                if len(longest_substring) < len(substrings):
+                    longest_substring = substrings
+                substrings = substrings[letter_location+1:]
+                substrings = substrings + letter
         else:
-            letter_index[letter] = index
+            substrings = substrings + letter
 
-    # substrings for "pwwkew" are ["w", "wke"] which is incorrect
-    if not substrings:
-        substrings.append(string)
-    return max(len(letter) for letter in substrings)
+    if len(longest_substring) < len(substrings):
+        longest_substring = substrings
+
+    return len(longest_substring)
