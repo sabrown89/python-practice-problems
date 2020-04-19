@@ -3,7 +3,14 @@ A left rotation operation on an array shifts each of the array's elements 1 unit
 
 Given an array of n integers and a number, perform the number of rotations on the array. Return the updated array to be printed as a single line of space-separated integers.
 """
+# better solution
+
 def left_rotation(array, rotations):
+    return array[rotations:] + array[:rotations]
+
+# first attempt
+
+def left_rotation_first_attempt(array, rotations):
     for rotation in range(rotations):
         first_element = array.pop(0)
         array.append(first_element)
